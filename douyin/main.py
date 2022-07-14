@@ -2,15 +2,13 @@ import uvicorn
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from fastapi import FastAPI
 from lib.aiosql import Pmysql
+from lib import logger
 import config
 
 
-import utils.req as req
-
 app = FastAPI()
 scheduler = AsyncIOScheduler(timezone='Asia/Shanghai')
-log = req.log
-
+log = logger.logging()
 
 @app.on_event("startup")
 async def startup_event():
