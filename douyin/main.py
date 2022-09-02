@@ -3,6 +3,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from fastapi import FastAPI
 from lib.aiosql import Pmysql
 from lib import logger
+from utils import req
 import config
 
 
